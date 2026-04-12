@@ -1,0 +1,11 @@
+.env
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.vscode/
+.idea/
+*.swp
+data_export/*.csv
