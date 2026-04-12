@@ -1,0 +1,4 @@
+Anker-Solix-Api @ git+https://github.com/thomluther/anker-solix-api.git@ba28ce2d4fbe895dafc3a14596d3c4c8b227740f
+dotenv==0.9.9
+python-dotenv==1.2.2
+python-snap7==3.0.0
