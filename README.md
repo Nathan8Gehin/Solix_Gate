@@ -1,25 +1,34 @@
-# Automated Solar Panel system
+# Project Solarbank: Energy Data Monitoring & Analytics
 
-## Project Goal
-This project aims to simplify and automate the retrieval and management of official French administrative documents (such as the *Attestation de droits Ameli* and *Criminal Record Bulletin No. 3*). 
+## Project Overview
+The objective of this project is to develop an automated monitoring solution for the **Anker Solix** solar power ecosystem (specifically targeting the Solarbank 2 series). 
 
-The application provides a centralized interface for users to initiate requests, track administrative processing times, and securely store digital copies of their documents, ensuring they are always up-to-date for employers or educational institutions.
+By bypassing the limitations of the official mobile-only interface, this project aims to:
+* **Extract real-time telemetry**: Capture live data from photovoltaic panels (input), battery storage (capacity/health), and home load (output).
+* **Data Centralization**: Enable long-term logging for energy efficiency audits.
+* **Smart Integration**: Prepare the data for export into custom dashboards or local home automation controllers.
 
-## Technical Context
-The system is built to handle asynchronous administrative workflows. It manages the lifecycle of a document request from the initial user input to the final PDF download, specifically addressing the validation delays inherent in government portals.
+## 🛠 Technical Challenge (The "Session Blocker")
+We are currently facing a critical hurdle regarding **Session Management** and **Cloud Authentication** on Anker’s servers. 
 
-## Features
-- **Automated Workflow:** Streamlined process for requesting official documents.
-- **Validity Monitoring:** Automatic tracking of document expiration dates (e.g., the 3-month validity rule for criminal records).
-- **Secure File Management:** Local or cloud-based storage of sensitive administrative PDFs.
+### Symptoms & Observations:
+1. **Intermittent Success**: Authentication works successfully on the first attempt but fails systematically on subsequent runs.
+2. **Session Persistence Issues**: We frequently encounter `Login Failed` errors or `NoneType` exceptions, suggesting the internal `aiohttp` session is not being correctly maintained or closed.
+3. **Bot Detection**: Even with a dedicated "Guest Account" and randomized User-Agents, the server appears to flag the IP address or the Account ID after a few requests.
+4. **Environment Diversity**: The issue persists across different networks (Home Wi-Fi vs. 4G/LTE Hotspot), suggesting the lock is account-side rather than just IP-based.
 
-## Credits & Dependencies
-This project utilizes the **Gemkick API** to handle complex document processing and data retrieval within the Google Workspace environment.
+## 📚 Credits and References
+This project is built upon the Open Source community's reverse-engineering efforts of the Anker Solix protocol.
 
-* **API Used:** Gemkick Corpus API
-* **Source:** [https://github.com/google-gemini/gemkick](https://github.com/google-gemini/gemkick)
+* **API Wrapper:** `anker-solix-api`
+* **Original Author:** [thomluther](https://github.com/thomluther)
+* **GitHub Repository:** [https://github.com/thomluther/anker-solix-api](https://github.com/thomluther/anker-solix-api)
 
-## Installation & Setup
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+## 🏗 Technical Stack
+* **Language:** Python 3.x
+* **Asynchronous Framework:** `asyncio` & `aiohttp`.
+* **Configuration:** `python-dotenv` for secure credential management.
+* **Architecture:** The client simulates a mobile device environment (Headers, User-Agent, App-Version) to communicate with Anker’s AWS-hosted endpoints (EU/DE regions).
+
+---
+*Project developed for personal uses - 2026*
