@@ -1,0 +1,30 @@
+{
+  "user_id": "2d81e20f0d48365cd6924a61385564f893ca7153",
+  "email": "nathan.gehin@gmail.com",
+  "nick_name": "nat***",
+  "auth_token": "89157cf07599d21431332078e61681e0e257fb066d91bb12",
+  "token_expires_at": 1778598243,
+  "avatar": "",
+  "mac_addr": "44ec08c6-f5e9-4ee8-b284-ef21ff3f61cf",
+  "domain": "",
+  "ab_code": "EU",
+  "token_id": 90918610,
+  "geo_key": "c4a8f67abb862469c51d054339d999f5",
+  "privilege": 0,
+  "phone_code": "33",
+  "phone": "",
+  "phone_number": "",
+  "phone_code_2fa": "",
+  "phone_2fa": "",
+  "server_secret_info": {
+    "public_key": "04c809d2534c48cfedc01dbcc2aadeb302e81f282a1584ec244afed13332ec366306cdcd5eb617c1f484ce1c88ea8455a7880d1ddd37dcd60179eccc0f689283a4"
+  },
+  "params": [],
+  "trust_list": null,
+  "fa_info": {
+    "step": 0,
+    "info": ""
+  },
+  "country_code": "FR",
+  "ap_cloud_user_id": "2d81e20f0d48365cd6924a61385564f893ca7153"
+}
